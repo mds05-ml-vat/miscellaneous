@@ -1,0 +1,18 @@
+<View>
+  <Video name="video" value="$video_url" sync="audio"/>
+  <Labels name="caption" toName="audio">
+    <Label value="Selection 1" background="#1BB500"/>
+    <Label value="Selection 2" background="#FFA91D"/>
+    <Label value="Selection 3" background="#358EF3"/>
+    <Label value="Selection 4" background="#FF0000"/>
+    <Label value="Selection 5" background="#800080"/>
+  </Labels>
+  <AudioPlus name="audio" value="$video_url" sync="video" speed="false"/>
+  <View visibleWhen="region-selected">
+    <Header value="Transcription" />
+    <TextArea name="transcription" toName="audio" editable="true" 
+            perRegion="true" required="true" 
+            maxSubmissions="1" rows="5" placeholder="Please provide a detailed caption specific to the scene" 
+            />
+  </View>
+</View>
